@@ -1,0 +1,41 @@
+<script setup lang="ts"></script>
+
+<template>
+  <section class="hero">
+    <div class="overlay">
+      <h1>CAKE</h1>
+      <p class="subtitle">by Asmaa</p>
+    </div>
+  </section>
+</template>
+
+<style lang="scss" scoped>
+.hero {
+  height: 100vh;
+  background-image: url('@/assets/cakelanding.jpeg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  font-size: 6rem;
+  text-align: center;
+  color: black;
+  transform: translateY(-150%);
+  line-height: 1;
+}
+
+h1 {
+  font-size: 4rem;
+  letter-spacing: 0.3em;
+}
+
+.subtitle {
+  font-style: italic;
+  margin-top: 0.5rem;
+  font-family: Sacramento;
+}
+</style>

@@ -1,0 +1,26 @@
+@import './base.css';
+
+@font-face {
+  font-family: Showclick;
+  src: url(../assets/font/Showclick.ttf);
+}
+
+@font-face {
+  font-family: Fraunces;
+  src: url(../assets/font/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf);
+}
+
+
+@font-face {
+  font-family: Baskerville;
+  src: url(../assets/font/LibreBaskerville-VariableFont_wght.ttf);
+}
+
+
+
+@font-face {
+  font-family: Sacramento;
+  src: url(../assets/font/Sacramento-Regular.ttf);
+}
+
+
