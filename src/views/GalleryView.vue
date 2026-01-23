@@ -5,27 +5,47 @@
 */
 const images = [
   new URL('@/assets/gallery/142.jpeg', import.meta.url).href,
-  new URL('@/assets/gallery/213.jpeg', import.meta.url).href,
+  new URL('@/assets/gallery/664.jpeg', import.meta.url).href,
   new URL('@/assets/gallery/321.jpeg', import.meta.url).href,
   new URL('@/assets/gallery/325.jpeg', import.meta.url).href,
   new URL('@/assets/gallery/332.jpeg', import.meta.url).href,
   new URL('@/assets/gallery/229.jpeg', import.meta.url).href,
   new URL('@/assets/gallery/335.jpeg', import.meta.url).href,
+  new URL('@/assets/gallery/586.jpeg', import.meta.url).href,
   new URL('@/assets/gallery/352.jpeg', import.meta.url).href,
-  new URL('@/assets/gallery/542.jpeg', import.meta.url).href,
   new URL('@/assets/gallery/754.jpeg', import.meta.url).href,
-  new URL('@/assets/gallery/865.jpeg', import.meta.url).href,
-  new URL('@/assets/gallery/774.jpeg', import.meta.url).href,
+  new URL('@/assets/gallery/759.jpeg', import.meta.url).href,
+  new URL('@/assets/gallery/768.jpeg', import.meta.url).href,
   new URL('@/assets/gallery/534.jpeg', import.meta.url).href,
   new URL('@/assets/gallery/452.jpeg', import.meta.url).href,
   new URL('@/assets/gallery/521.jpeg', import.meta.url).href,
+  new URL('@/assets/gallery/747.jpeg', import.meta.url).href,
+  new URL('@/assets/gallery/865.jpeg', import.meta.url).href,
 
   // Continue until img34.jpg
 ]
 
-const layoutPattern = ['tall', 'square', 'wide', 'square', 'square', 'tall', 'square', 'wide']
+/*
+  Vertical-first pattern:
+  - Mostly vertical
+  - Some squares
+  - Very few horizontals
+*/
+const layoutPattern = [
+  'vertical',
+  'square',
+  'vertical',
+  'vertical',
+  'square',
+  'vertical',
+  'vertical',
+  'horizontal', // rare accent
+  'vertical',
+  'square'
+]
 
-const getLayoutClass = (index) => layoutPattern[index % layoutPattern.length]
+const getLayoutClass = (index) =>
+  layoutPattern[index % layoutPattern.length]
 </script>
 
 <template>
@@ -47,10 +67,10 @@ const getLayoutClass = (index) => layoutPattern[index % layoutPattern.length]
 .gallery-section {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 8rem 1.5rem;
+  padding: 3rem 1.5rem;
 }
 
-/* Editorial grid with dense packing */
+/* Vertical-friendly editorial grid */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -75,18 +95,18 @@ const getLayoutClass = (index) => layoutPattern[index % layoutPattern.length]
   transform: scale(1.05);
 }
 
-/* Layout variations */
+/* Layout types */
+.gallery-item.vertical {
+  grid-column: span 2;
+  grid-row: span 3;
+}
+
 .gallery-item.square {
   grid-column: span 2;
   grid-row: span 2;
 }
 
-.gallery-item.tall {
-  grid-column: span 2;
-  grid-row: span 3;
-}
-
-.gallery-item.wide {
+.gallery-item.horizontal {
   grid-column: span 4;
   grid-row: span 2;
 }
@@ -98,7 +118,7 @@ const getLayoutClass = (index) => layoutPattern[index % layoutPattern.length]
     grid-auto-rows: 160px;
   }
 
-  .gallery-item.wide {
+  .gallery-item.horizontal {
     grid-column: span 4;
   }
 }
@@ -109,9 +129,9 @@ const getLayoutClass = (index) => layoutPattern[index % layoutPattern.length]
     grid-auto-rows: 150px;
   }
 
+  .gallery-item.vertical,
   .gallery-item.square,
-  .gallery-item.tall,
-  .gallery-item.wide {
+  .gallery-item.horizontal {
     grid-column: span 2;
     grid-row: span 2;
   }
@@ -123,8 +143,8 @@ const getLayoutClass = (index) => layoutPattern[index % layoutPattern.length]
   }
 
   .gallery-item {
-    /* grid-column: span 1 !important;
-    grid-row: span 1 !important; */
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
   }
 }
 </style>

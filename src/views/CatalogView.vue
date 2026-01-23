@@ -26,7 +26,7 @@ const cakes = [
     name: 'Dessert cups',
     basic: 'Dessert cups',
     basicprice: '4/each',
-    decorated: 'Dessert cups',
+    decorated: 'or',
     decoratedprice: '48/dozen',
     image: new URL('@/assets/articles/cakecups.jpeg', import.meta.url).href,
   },
@@ -37,7 +37,7 @@ const cakes = [
     basicprice: '35',
     decorated: 'Decorated cake pops multiple designs',
     decoratedprice: '40',
-    image: new URL('@/assets/articles/cakepops.jpeg', import.meta.url).href,
+    image: new URL('@/assets/articles/cakepops3.jpeg', import.meta.url).href,
   },
 ]
 
