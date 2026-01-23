@@ -48,7 +48,7 @@ const catalogCakes = [
   { name: '6 inch cake', serving: '12-15 people', price: '95' },
   { name: '8 inch cake', serving: '25 people', price: '150' },
   { name: '10 inch cake', serving: '40 people', price: '200' },
-  { name: '6 inch + 8 inch tiered cake', serving: '40 people', price: '150' },
+  { name: '6 inch + 8 inch tiered cake', serving: '40 people', price: '250' },
 ]
 
 const flavors = [
@@ -104,6 +104,9 @@ const fillings = [
             </div>
           </div>
         </div>
+        <span>Cakes quotes for more than 40 servings are available upon request. </span>
+        <span>Prices do not include custom decorations. Fondant toppers, flowers and 
+          personalized decorations are extras and will be priced upon each unique designs.</span>
       </div>
 
       <!-- Right: image -->
