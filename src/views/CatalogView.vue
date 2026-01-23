@@ -33,7 +33,7 @@ const cakes = [
   {
     id: 4,
     name: 'Cake pops',
-    basic: 'Decorated cake pops one basic designs',
+    basic: 'Decorated cake pops one basic design',
     basicprice: '35',
     decorated: 'Decorated cake pops multiple designs',
     decoratedprice: '40',
