@@ -118,21 +118,21 @@ const fillings = [
     <!-- Bottom details -->
     <div class="catalog-details">
       <div class="detail-card">
-        <h4>Flavors</h4>
+        <h4> 1- Pick a cake flavor</h4>
         <div class="tag-list">
           <span v-for="f in flavors" :key="f" class="tag">{{ f }}</span>
         </div>
       </div>
 
       <div class="detail-card">
-        <h4>Fillings</h4>
+        <h4> 2- Pick a cake filling</h4>
         <div class="tag-list">
           <span v-for="f in fillings" :key="f" class="tag">{{ f }}</span>
         </div>
       </div>
 
       <div class="detail-card">
-        <h4>Gourmet toppings inside the filling</h4>
+        <h4> 3- Optional: Gourmet toppings</h4>
         <div class="tag-list">
           <span v-for="i in icings" :key="i" class="tag">{{ i }}</span>
         </div>
