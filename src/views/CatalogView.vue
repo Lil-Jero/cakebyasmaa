@@ -103,10 +103,14 @@ const fillings = [
               <span>feeds about {{ item.serving }}</span>
             </div>
           </div>
+          <div>
+            <div>Cakes quotes for more than 40 servings are available upon request.</div>
+            <div>
+              Prices do not include custom decorations. Fondant toppers, flowers and personalized
+              decorations are extras and will be priced upon each unique designs.
+            </div>
+          </div>
         </div>
-        <span>Cakes quotes for more than 40 servings are available upon request. </span>
-        <span>Prices do not include custom decorations. Fondant toppers, flowers and 
-          personalized decorations are extras and will be priced upon each unique designs.</span>
       </div>
 
       <!-- Right: image -->
@@ -118,21 +122,21 @@ const fillings = [
     <!-- Bottom details -->
     <div class="catalog-details">
       <div class="detail-card">
-        <h4> 1- Pick a cake flavor</h4>
+        <h4>1- Pick a cake flavor</h4>
         <div class="tag-list">
           <span v-for="f in flavors" :key="f" class="tag">{{ f }}</span>
         </div>
       </div>
 
       <div class="detail-card">
-        <h4> 2- Pick a cake filling</h4>
+        <h4>2- Pick a cake filling</h4>
         <div class="tag-list">
           <span v-for="f in fillings" :key="f" class="tag">{{ f }}</span>
         </div>
       </div>
 
       <div class="detail-card">
-        <h4> 3- Optional: Gourmet toppings</h4>
+        <h4>3- Optional: Gourmet toppings</h4>
         <div class="tag-list">
           <span v-for="i in icings" :key="i" class="tag">{{ i }}</span>
         </div>
@@ -200,6 +204,7 @@ const fillings = [
   display: flex;
   flex-direction: column;
   gap: 20px;
+  max-width: 420px;
 
   .cake-pricing-container {
     display: flex;
@@ -296,11 +301,15 @@ const fillings = [
   margin-bottom: 4rem;
 }
 
+.catalog-img {
+  display: flex;
+  justify-content: center;
+}
+
 .catalog-image img {
   width: 100%;
   max-width: 320px;
   display: block;
-  margin: 0 auto;
 }
 
 .catalog-details {
@@ -349,6 +358,7 @@ const fillings = [
   align-items: center;
 
   max-width: 100%;
+  width: fit-content;
   padding: 0.35rem 0.75rem;
 
   background: #f7f7f7;
@@ -359,7 +369,6 @@ const fillings = [
 
   white-space: normal;
   word-break: break-word;
-  text-align: center;
 
   &:hover {
     background: #efefef;
