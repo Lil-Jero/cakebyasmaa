@@ -90,11 +90,47 @@ a {
 }
 
 .contact {
-  background: rgba(255, 255, 255, 0.8);
-  border: none;
+  color: #000000;
+  transition: all 0.5s;
+  position: relative;
   padding: 0.4rem 0.8rem;
   cursor: pointer;
-  border-radius: 20px;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s;
+}
+
+.contact:hover::before {
+  opacity: 0;
+  transform: scale(0.5, 0.5);
+}
+
+.contact::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  transform: scale(1.2, 1.2);
+}
+
+.contact:hover::after {
+  opacity: 1;
+  transform: scale(1, 1);
 }
 
 /* ===== Burger ===== */

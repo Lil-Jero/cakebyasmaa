@@ -9,57 +9,32 @@ const { send } = useEmailSend(formRef)
 <template>
   <section class="contact-page">
     <div class="contact-page__container">
-      <!-- LEFT CONTENT -->
-      <div class="contact-page__content">
-        <h1>Contact me</h1>
-
-        <p class="contact-page__intro">
-          Massa urna magnis dignissim id euismod porttitor vitae etiam viverra at adipiscing sit
-          morbi aliquet mauris porttitor nisi.
-        </p>
-
-        <ul class="contact-page__infos">
-          <li>
-            <strong>Office</strong>
-            <span>1234 N Spring St, Los Angeles, CA 90012, United States</span>
-          </li>
-
-          <li>
-            <strong>Phone</strong>
-            <span>+01 - 123 456 7890</span>
-          </li>
-
-          <li>
-            <strong>Email</strong>
-            <span>mail@example.com</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- RIGHT FORM -->
       <div class="contact-page__form-wrapper">
         <div class="contact-page__image">
-          <form ref="formRef" class="contact-form" @submit.prevent="send">
-            <div class="contact-form__grid">
-              <input type="text" name="first_name" placeholder="First name" required />
-              <input type="text" name="last_name" placeholder="Last name" required />
+          <div class="contact-page__form-container">
+            <h1 class="contact-page__title">Cake order form</h1>
+            <form ref="formRef" class="contact-form" @submit.prevent="send">
+              <input type="date" name="pick_up" placeholder="Pick up date" required />
+              <input type="text" name="full_name" placeholder="Name" required />
+              <div class="contact-form__grid">
+                <!-- <input type="text" name="last_name" placeholder="Last name" required /> -->
 
-              <input type="email" name="email" placeholder="Email address" required />
-              <input type="tel" name="phone" placeholder="Phone" />
-            </div>
+                <input type="email" name="email" placeholder="Email address" required />
+                <input type="tel" name="phone" placeholder="Phone" />
+              </div>
+              <div class="contact-form__grid">
+                <input type="number" name="serving" placeholder="Nb of serving" required />
+                <input type="text" name="flavor" placeholder="Cake flavor" />
+              </div>
+              <input type="text" name="fillings" placeholder="Cake fillings" />
+              <input type="text" name="optional_topings" placeholder="Optional toppings" />
+              <input type="text" name="theme" placeholder="Theme & colors" />
+              <input type="text" name="add-ons" placeholder="Cake add-ons" />
+              <input type="text" name="allergies" placeholder="Allergies" />
 
-            <input
-              class="contact-form__full"
-              type="text"
-              name="subject"
-              placeholder="Subject"
-              required
-            />
-
-            <textarea class="contact-form__full" name="message" placeholder="Message" required />
-
-            <button type="submit" class="contact-form__submit">Submit</button>
-          </form>
+              <button type="submit" class="contact-form__submit">Submit</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -77,7 +52,6 @@ const { send } = useEmailSend(formRef)
   --radius: 999px;
 
   max-width: 720px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -187,7 +161,6 @@ const { send } = useEmailSend(formRef)
     padding: 6rem 2rem;
 
     display: grid;
-    grid-template-columns: 1.1fr 1fr;
     gap: 4rem;
   }
 
@@ -233,24 +206,29 @@ const { send } = useEmailSend(formRef)
 
   &__form-wrapper {
     display: flex;
-    justify-content: center;
     align-items: flex-start;
+    flex-direction: column;
 
     .contact-page__image {
       position: relative;
       width: 100%;
-      min-height: 100%;
-
       background-image: url('@/assets/cakelanding.jpeg');
       background-size: cover;
       background-position: center;
-      // background-repeat: no-repeat;
-
-      // display: flex;
-      // justify-content: center;
-      // align-items: center;
-
       padding: 4rem 2rem;
+
+      display: flex;
+      justify-content: center;
+    }
+
+    .contact-page__form-container {
+      width: 100%;
+      max-width: 720px;
+      margin-bottom: 2rem;
+    }
+
+    .contact-page__title {
+      font-size: clamp(2.5rem, 4vw, 3.2rem);
     }
   }
 

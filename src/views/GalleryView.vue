@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 /*
   Replace these paths with your actual image paths.
   You can add/remove images freely — layout adapts automatically.
@@ -41,11 +41,11 @@ const layoutPattern = [
   'vertical',
   'horizontal', // rare accent
   'vertical',
-  'square'
+  'square',
+  'filler',
 ]
 
-const getLayoutClass = (index) =>
-  layoutPattern[index % layoutPattern.length]
+const getLayoutClass = (index: number) => layoutPattern[index % layoutPattern.length]
 </script>
 
 <template>
@@ -57,7 +57,9 @@ const getLayoutClass = (index) =>
         class="gallery-item"
         :class="getLayoutClass(index)"
       >
-        <img :src="image" alt="Gallery image" loading="lazy" />
+        <a :href="image" rel="noopener">
+          <img :src="image" alt="Gallery image" loading="lazy" />
+        </a>
       </div>
     </div>
   </section>
@@ -67,7 +69,7 @@ const getLayoutClass = (index) =>
 .gallery-section {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 3rem 1.5rem;
+  padding: 6rem 1.5rem 4rem 1.5rem;
 }
 
 /* Vertical-friendly editorial grid */
@@ -75,13 +77,12 @@ const getLayoutClass = (index) =>
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-auto-rows: 180px;
-  gap: 1.25rem;
+  gap: 0.75rem;
   grid-auto-flow: dense;
 }
 
 .gallery-item {
   overflow: hidden;
-  border-radius: 14px;
 }
 
 .gallery-item img {
@@ -93,6 +94,11 @@ const getLayoutClass = (index) =>
 
 .gallery-item:hover img {
   transform: scale(1.05);
+}
+
+.gallery-item.filler {
+  grid-column: span 2;
+  grid-row: span 1;
 }
 
 /* Layout types */
@@ -115,7 +121,7 @@ const getLayoutClass = (index) =>
 @media (max-width: 1200px) {
   .gallery-grid {
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 160px;
+    grid-auto-rows: 260px;
   }
 
   .gallery-item.horizontal {
@@ -126,7 +132,7 @@ const getLayoutClass = (index) =>
 @media (max-width: 768px) {
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 150px;
+    grid-auto-rows: 460px;
   }
 
   .gallery-item.vertical,
@@ -140,11 +146,17 @@ const getLayoutClass = (index) =>
 @media (max-width: 480px) {
   .gallery-grid {
     grid-template-columns: 1fr;
+    grid-auto-rows: 600px;
   }
 
   .gallery-item {
     grid-column: span 1 !important;
     grid-row: span 1 !important;
+  }
+
+  .gallery-section {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 }
 </style>
