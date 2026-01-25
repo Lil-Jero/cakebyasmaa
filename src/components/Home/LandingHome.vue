@@ -11,7 +11,7 @@
 
 <style lang="scss" scoped>
 .hero {
-  height: 100vh;
+  min-height: 100dvh;
   background-image: url('@/assets/cakelanding.jpeg');
   background-size: cover;
   background-position: center;
@@ -37,5 +37,11 @@ h1 {
   font-style: italic;
   margin-top: 0.5rem;
   font-family: Sacramento;
+}
+
+@media (any-pointer: coarse) and (any-hover: none) {
+  .hero {
+    padding-top: 86px;
+  }
 }
 </style>

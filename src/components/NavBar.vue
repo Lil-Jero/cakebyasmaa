@@ -150,39 +150,7 @@ a {
   background: black;
 }
 
-/* ===== Mobile menu ===== */
-
-.mobile-menu {
-  position: fixed;
-  top: 66px; /* hauteur de ta navbar */
-  left: 0;
-  width: 100%;
-
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-
-  padding: 2rem;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(6px);
-
-  z-index: 20;
-}
-
 /* ===== Animation ===== */
-
-/* .slide-enter-active,
-.slide-leave-active {
-  transition:
-    transform 0.25s ease,
-    opacity 0.25s ease;
-}
-
-.slide-enter-from,
-.slide-leave-to {
-  transform: translateY(-10px);
-  opacity: 0;
-} */
 
 .slide-enter-from {
   transform: translateY(-20px);
