@@ -15,9 +15,9 @@ const cakes = [
   {
     id: 2,
     name: 'Sugar cookies',
-    basic: 'Decorated sugar cookies one basic design',
+    basic: 'One basic design',
     basicprice: '45/dozen',
-    decorated: 'Decorated sugar cookies multiple designs',
+    decorated: 'Multiple designs',
     decoratedprice: '55/dozen',
     image: new URL('@/assets/articles/cookies.jpeg', import.meta.url).href,
   },
@@ -33,9 +33,9 @@ const cakes = [
   {
     id: 4,
     name: 'Cake pops',
-    basic: 'Decorated cake pops one basic design',
+    basic: 'One basic design',
     basicprice: '35',
-    decorated: 'Decorated cake pops multiple designs',
+    decorated: 'Multiple designs',
     decoratedprice: '40',
     image: new URL('@/assets/articles/cakepops.jpeg', import.meta.url).href,
   },
@@ -58,10 +58,11 @@ const flavors = [
   'Strawberry',
   'Red Velvet',
   'Sprinkles',
+  'Marble',
 ]
 const icings = [
   'Fruits: choice of strawberries, berries, pineapple',
-  'Homemade confit: choice of strawberries, raspberries, blueberries ',
+  'Homemade compote: choice of strawberries, raspberries, blueberries ',
   'Crushed oreos',
   'Crushed ferrero rocher',
   'Mini chocolate chips',
@@ -74,6 +75,7 @@ const fillings = [
   'Pistachio ashta',
   'Biscoff lotus',
   'Tiramisu',
+  'Coffee mousse',
 ]
 </script>
 
@@ -84,7 +86,7 @@ const fillings = [
   <section class="catalog-section">
     <header class="header">
       <h2>Cakes</h2>
-      <p class="subtitle">Lovingly made desserts using premium ingredients and seasonal flavors.</p>
+      <p class="subtitle">Elevate your celebration with a luxurious cake, a perfect harmony of rich flavors and elegant design that will delight every palate.</p>
     </header>
 
     <div class="catalog-main">
@@ -106,8 +108,12 @@ const fillings = [
           <div>
             <div>Cakes quotes for more than 40 servings are available upon request.</div>
             <div>
-              Prices do not include custom decorations. Fondant toppers, flowers and personalized
-              decorations are extras and will be priced upon each unique designs.
+              <div class="cake-pricing-serving">
+                <span>
+                Prices do not include custom decorations. Fondant toppers, flowers and personalized
+                decorations are extras and will be priced upon each unique designs. 
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -151,7 +157,7 @@ const fillings = [
   <section class="cakes-section">
     <header class="header">
       <h2>Gourmandises</h2>
-      <p class="subtitle">Lovingly made desserts using premium ingredients and seasonal flavors.</p>
+      <p class="subtitle">Complete your event with irresistible sweet treats; from fluffy cupcakes to delightful cake pops to freshly baked cookies, each bite will leave your guests craving more!</p>
     </header>
 
     <div class="cakes-grid">

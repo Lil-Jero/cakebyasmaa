@@ -22,15 +22,22 @@ const { send } = useEmailSend(formRef)
                 <input type="email" name="email" placeholder="Email address" required />
                 <input type="tel" name="phone" placeholder="Phone" />
               </div>
-              <div class="contact-form__grid">
-                <input type="number" name="serving" placeholder="Nb of serving" required />
-                <input type="text" name="flavor" placeholder="Cake flavor" />
-              </div>
-              <input type="text" name="fillings" placeholder="Cake fillings" />
+              
+              <input type="number" name="serving" placeholder="Number of servings" required />
+              <input type="text" name="flavor" placeholder="Cake flavor" />
+
+              <input type="text" name="fillings" placeholder="Cake filling" />
               <input type="text" name="optional_topings" placeholder="Optional toppings" />
-              <input type="text" name="theme" placeholder="Theme & colors" />
-              <input type="text" name="add-ons" placeholder="Cake add-ons" />
+              <input type="text" name="theme" placeholder="Cake theme & colors" />
+              <input type="text" name="add-ons" placeholder="Cake add-ons (Name/Number)" />
               <input type="text" name="allergies" placeholder="Allergies" />
+              <div>Allergen Disclaimer:</div>
+
+
+Thank you for choosing Cake by Asmaa! Our kitchen contains common allergens including, 
+but not limited to, nuts, dairy, gluten, and eggs. 
+If you have food allergies or dietary needs, please inform us before ordering. 
+We’d be more than happy to recommend an allergy-friendly bakery! Your safety is important to us!
 
               <button type="submit" class="contact-form__submit">Submit</button>
             </form>
