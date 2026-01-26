@@ -105,7 +105,7 @@ const fillings = [
               <span>feeds about {{ item.serving }}</span>
             </div>
           </div>
-          <div>
+          <div class="cakes-serving-and-pricing-notes">
             <div>Cakes quotes for more than 40 servings are available upon request.</div>
             <div>
               <div class="cake-pricing-serving">
@@ -236,6 +236,12 @@ const fillings = [
 
     .cake-princing-price {
       font-weight: 600;
+    }
+
+    .cakes-serving-and-pricing-notes{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
   }
 }
