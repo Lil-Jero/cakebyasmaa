@@ -1,6 +1,6 @@
 <script setup lang="ts">
 /* =========================
-   Gourmandises data (UNCHANGED)
+   Gourmandises data
    ========================= */
 const cakes = [
   {
@@ -80,271 +80,374 @@ const fillings = [
 </script>
 
 <template>
-  <!-- =========================
-       CATALOG / CAKES SECTION
-       ========================= -->
   <section class="catalog-section">
-    <header class="header">
-      <h2>Cakes</h2>
-      <p class="subtitle">Elevate your celebration with a luxurious cake, a perfect harmony of rich flavors and elegant design that will delight every palate.</p>
-    </header>
+    <div class="container">
+      <header class="header">
+        <h2>Cakes</h2>
+        <p class="subtitle">
+          Elevate your celebration with a luxurious cake, a perfect harmony of rich flavors and
+          elegant design that will delight every palate.
+        </p>
+      </header>
 
-    <div class="catalog-main">
-      <!-- Left: price list -->
-      <div class="catalog-list">
-        <h3>Cake size pricing</h3>
+      <div class="catalog-main">
+        <div class="catalog-list">
+          <h3>Cake size pricing</h3>
 
-        <div class="cake-pricing-container">
-          <div v-for="item in catalogCakes" :key="item.name">
-            <div class="cake-pricing-item">
-              <span>{{ item.name }}</span>
-              <span class="catalog-line"></span>
-              <span class="cake-princing-price">starts at ${{ item.price }}</span>
-            </div>
-            <div class="cake-pricing-serving">
-              <span>feeds about {{ item.serving }}</span>
-            </div>
-          </div>
-          <div class="cakes-serving-and-pricing-notes">
-            <div>Cakes quotes for more than 40 servings are available upon request.</div>
-            <div>
+          <div class="cake-pricing-container">
+            <div v-for="item in catalogCakes" :key="item.name" class="price-block">
+              <div class="cake-pricing-item">
+                <span class="item-name">{{ item.name }}</span>
+                <span class="catalog-line"></span>
+                <span class="cake-pricing-price">starts at ${{ item.price }}</span>
+              </div>
               <div class="cake-pricing-serving">
-                <span>
-                Prices do not include custom decorations. Fondant toppers, flowers and personalized
-                decorations are extras and will be priced upon each unique designs. 
-                </span>
+                <span>feeds about {{ item.serving }}</span>
               </div>
             </div>
+
+            <div class="cakes-serving-and-pricing-notes">
+              <p>Cakes quotes for more than 40 servings are available upon request.</p>
+              <p>
+                Prices do not include custom decorations. Fondant toppers, flowers and personalized
+                decorations are extras and will be priced upon each unique designs.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Right: image -->
-      <div class="catalog-image">
-        <img src="@/assets/articles/cakemenu.jpg" alt="Cake example" />
-      </div>
-    </div>
-
-    <!-- Bottom details -->
-    <div class="catalog-details">
-      <div class="detail-card">
-        <h4>1- Pick a cake flavor</h4>
-        <div class="tag-list">
-          <span v-for="f in flavors" :key="f" class="tag">{{ f }}</span>
+        <div class="catalog-image">
+          <img src="@/assets/articles/cakemenu.jpg" alt="Cake example" />
         </div>
       </div>
 
-      <div class="detail-card">
-        <h4>2- Pick a cake filling</h4>
-        <div class="tag-list">
-          <span v-for="f in fillings" :key="f" class="tag">{{ f }}</span>
+      <div class="catalog-details">
+        <div class="detail-card">
+          <h4>1- Pick a cake flavor</h4>
+          <div class="tag-list">
+            <span v-for="f in flavors" :key="f" class="tag">{{ f }}</span>
+          </div>
         </div>
-      </div>
 
-      <div class="detail-card">
-        <h4>3- Optional: Gourmet toppings</h4>
-        <div class="tag-list">
-          <span v-for="i in icings" :key="i" class="tag">{{ i }}</span>
+        <div class="detail-card">
+          <h4>2- Pick a cake filling</h4>
+          <div class="tag-list">
+            <span v-for="f in fillings" :key="f" class="tag">{{ f }}</span>
+          </div>
+        </div>
+
+        <div class="detail-card">
+          <h4>3- Optional: Gourmet toppings</h4>
+          <div class="tag-list">
+            <span v-for="i in icings" :key="i" class="tag">{{ i }}</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- =========================
-       GOURMANDISES SECTION
-       (UNCHANGED)
-       ========================= -->
   <section class="cakes-section">
-    <header class="header">
-      <h2>Gourmandises</h2>
-      <p class="subtitle">Complete your event with irresistible sweet treats; from fluffy cupcakes to delightful cake pops to freshly baked cookies, each bite will leave your guests craving more!</p>
-    </header>
+    <div class="container">
+      <header class="header">
+        <h2>Gourmandises</h2>
+        <p class="subtitle">
+          Complete your event with irresistible sweet treats; from fluffy cupcakes to delightful
+          cake pops to freshly baked cookies, each bite will leave your guests craving more!
+        </p>
+      </header>
 
-    <div class="cakes-grid">
-      <article v-for="cake in cakes" :key="cake.id" class="cake-card">
-        <h4 class="cake-name">{{ cake.name }}</h4>
+      <div class="cakes-grid">
+        <article v-for="cake in cakes" :key="cake.id" class="cake-card">
+          <h4 class="cake-name">{{ cake.name }}</h4>
 
-        <img :src="cake.image" :alt="cake.name" class="cake-image" />
+          <div class="image-wrapper">
+            <img :src="cake.image" :alt="cake.name" class="cake-image" />
+          </div>
 
-        <p class="cake-description">{{ cake.basic }}</p>
-        <div class="price">${{ cake.basicprice }}</div>
+          <div class="card-content">
+            <div class="price-group">
+              <p class="cake-description">{{ cake.basic }}</p>
+              <div class="price">${{ cake.basicprice }}</div>
+            </div>
 
-        <p class="cake-description">{{ cake.decorated }}</p>
-        <div class="price">${{ cake.decoratedprice }}</div>
-      </article>
+            <div class="price-group">
+              <p class="cake-description">{{ cake.decorated }}</p>
+              <div class="price">${{ cake.decoratedprice }}</div>
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 </template>
 
 <style scoped lang="scss">
-/* =========================
-   GOURMANDISES STYLES
-   (UNCHANGED)
-   ========================= */
-.cakes-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  padding: 3rem;
-  background: #fff7e9;
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
 }
 
+/* =========================
+   COMMON HEADER STYLES
+   ========================= */
 .header {
   text-align: center;
-  margin-bottom: 2.5rem;
-}
+  margin-bottom: 3rem;
 
-.header h2 {
-  font-size: 2rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 0.75rem;
-}
+  h2 {
+    font-size: 2.5rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-family: serif;
+  }
 
-.subtitle {
-  color: #777;
-  font-size: 0.95rem;
-}
-.catalog-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 420px;
-
-  .cake-pricing-container {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+  .subtitle {
+    color: #777;
     font-size: 1rem;
-
-    .cake-pricing-item {
-      display: flex;
-      align-items: center;
-    }
-
-    .catalog-line {
-      flex: 1;
-      height: 1px;
-      background: #ccc;
-      margin: 0 0.75rem;
-    }
-
-    .cake-pricing-serving {
-      font-size: 0.7rem;
-    }
-
-    .cake-princing-price {
-      font-weight: 600;
-    }
-
-    .cakes-serving-and-pricing-notes{
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
   }
 }
 
-.cakes-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-}
-
-.cake-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 1rem;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-}
-
-.cake-image {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-}
-
-.cake-name {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-}
-
-.cake-description {
-  font-size: 0.85rem;
-  color: #666;
-  margin-bottom: 0.4rem;
-}
-
-.price {
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-}
-
 /* =========================
-   CATALOG STYLES
+   CATALOG SECTION
    ========================= */
 .catalog-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 8rem 1.5rem 4rem 1.5rem;
-}
-
-.catalog-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-
-.catalog-note {
-  font-size: 0.85rem;
-  opacity: 0.6;
+  padding: 6rem 1.5rem;
 }
 
 .catalog-main {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  gap: 3rem;
-  align-items: center;
-  margin-bottom: 4rem;
+  gap: 4rem;
+  align-items: start;
+  margin-bottom: 5rem;
 }
 
-.catalog-img {
+/* --- Price List --- */
+.catalog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+
+  .cake-pricing-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-size: 1rem;
+
+    .cake-pricing-item {
+      display: flex;
+      align-items: flex-end;
+      width: 100%;
+    }
+
+    .item-name {
+      white-space: nowrap;
+    }
+
+    .catalog-line {
+      flex: 1;
+      border-bottom: 1px dotted #ccc;
+      margin: 0 0.75rem 5px 0.75rem;
+    }
+
+    .cake-pricing-price {
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .cake-pricing-serving {
+      font-size: 0.8rem;
+      color: #666;
+      margin-top: 2px;
+      font-style: italic;
+    }
+
+    .cakes-serving-and-pricing-notes {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: #555;
+      line-height: 1.5;
+
+      p {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+/* --- Catalog Image --- */
+.catalog-image {
   display: flex;
   justify-content: center;
+
+  img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 10px 10px 0px rgba(255, 173, 250, 0.2);
+  }
 }
 
-.catalog-image img {
-  width: 100%;
-  max-width: 320px;
-  display: block;
-}
-
+/* --- Catalog Details (Cards) --- */
 .catalog-details {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin: 0 2rem;
   gap: 2rem;
+  width: 100%;
 }
 
 .detail-card {
   background: #fffdf9;
+  border: 1px solid #f0e6d2;
   border-radius: 18px;
-  padding: 1.5rem 1.5rem 1.75rem;
+  padding: 2rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-  animation: fadeUp 0.4s ease both;
-  min-width: 260px;
-  max-width: 400px;
+  animation: fadeUp 0.6s ease both;
 }
 
+.detail-card h4 {
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  color: #333;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  color: #555;
+  line-height: 1.3;
+
+  &:hover {
+    background: #ffebf7;
+    border-color: #ffebf7;
+    color: #a74b94;
+  }
+}
+
+/* =========================
+   GOURMANDISES SECTION
+   ========================= */
+.cakes-section {
+  padding: 4rem 1.5rem;
+  background: #fff7e9;
+  width: 100%;
+}
+
+.cakes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.cake-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.cake-name {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.image-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 1.2rem;
+}
+
+.cake-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+
+  .cake-card:hover & {
+    transform: scale(1.05);
+  }
+}
+
+.card-content {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.price-group {
+  border-bottom: 1px solid #f0f0f0;
+  padding-bottom: 0.5rem;
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+.cake-description {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 0.2rem;
+  line-height: 1.4;
+}
+
+.price {
+  font-weight: 700;
+  color: #000;
+  font-size: 1rem;
+}
+
+/* =========================
+   ANIMATIONS
+   ========================= */
 @keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(6px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -352,53 +455,64 @@ const fillings = [
   }
 }
 
-.detail-card h4 {
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
+/* =========================
+   RESPONSIVE (MEDIA QUERIES)
+   ========================= */
 
-.tag-list {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  align-items: flex-start;
-}
+/* Tablet & Small Laptop (max 1024px) */
+@media (max-width: 1024px) {
+  .catalog-main {
+    gap: 2rem;
+  }
 
-.tag {
-  display: inline-flex;
-  align-items: center;
-
-  max-width: 100%;
-  width: fit-content;
-  padding: 0.35rem 0.75rem;
-
-  background: #f7f7f7;
-  border-radius: 999px;
-
-  font-size: 0.75rem;
-  color: #333;
-
-  white-space: normal;
-  word-break: break-word;
-
-  &:hover {
-    background: #efefef;
+  .cakes-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Responsive */
+/* Mobile & Small Tablet (max 900px) */
 @media (max-width: 900px) {
-  .cakes-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .catalog-section,
+  .cakes-section {
+    padding: 6rem 1.5rem 3rem 1.5rem;
   }
 
   .catalog-main {
     grid-template-columns: 1fr;
+    margin-bottom: 3rem;
+  }
+
+  .catalog-image {
+    order: -1;
+    margin-bottom: 2rem;
+    img {
+      width: 100%;
+    }
   }
 
   .catalog-details {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* Small Mobile (max 600px) */
+@media (max-width: 600px) {
+  .header h2 {
+    font-size: 2rem;
+  }
+
+  .cakes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cake-pricing-item {
+    font-size: 0.9rem;
+  }
+
+  .catalog-section,
+  .cakes-section {
+    padding: 6rem 1rem 3rem 1rem;
   }
 }
 </style>

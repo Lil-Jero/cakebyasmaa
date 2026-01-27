@@ -58,6 +58,7 @@ const toggleMenu = () => {
 .nav-container {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
+  min-height: 85px;
 
   align-items: center;
   justify-content: space-between;
@@ -152,18 +153,16 @@ a {
 
 /* ===== Animation ===== */
 
-.slide-enter-from {
-  transform: translateY(-20px);
-  opacity: 0;
-}
-
-.slide-enter-active {
-  transition: all 0.3s ease;
-}
-
+/* Animation plus fluide pour un menu mobile */
+.slide-enter-from,
 .slide-leave-to {
-  transform: translateY(-20px);
+  transform: translateY(-10px);
   opacity: 0;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.3s ease-in-out;
 }
 
 /* ===== Responsive ===== */
@@ -177,5 +176,22 @@ a {
   .burger {
     display: flex;
   }
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 85px;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  z-index: 9;
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 </style>
