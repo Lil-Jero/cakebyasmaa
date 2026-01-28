@@ -209,6 +209,7 @@ const fillings = [
     max-width: 700px;
     margin: 0 auto;
     line-height: 1.6;
+    text-align: justify;
   }
 }
 
@@ -472,9 +473,11 @@ const fillings = [
 
 /* Mobile & Small Tablet (max 900px) */
 @media (max-width: 900px) {
-  .catalog-section,
-  .cakes-section {
+  .catalog-section {
     padding: 6rem 1.5rem 3rem 1.5rem;
+  }
+  .cakes-section {
+    padding: 3rem 1.5rem 3rem 1.5rem;
   }
 
   .catalog-main {

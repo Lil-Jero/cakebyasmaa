@@ -21,10 +21,10 @@
 }
 
 .overlay {
-  font-size: 6rem;
+  font-size: 4rem;
   text-align: center;
   color: black;
-  transform: translateY(-150%);
+  transform: translateY(-185%);
   line-height: 1;
 }
 
@@ -42,6 +42,12 @@ h1 {
 @media (any-pointer: coarse) and (any-hover: none) {
   .hero {
     padding-top: 86px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    background-image: url('@/assets/cakelanding-phone.jpeg');
   }
 }
 </style>

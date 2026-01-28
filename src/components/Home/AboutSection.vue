@@ -10,9 +10,9 @@
         <div class="text-content">
           <p class="title">I'm Asmaa</p>
           <p class="text">
-            ✨ Hello, beautiful friends! 👩‍🍳 I’m thrilled to have you here, and your interest in my
-            story truly warms my heart! Thank you for taking the time to connect with me! I’m Asmaa,
-            a wife, mom and a self-taught baker with a heart for creating. My journey began in
+            Hello, beautiful friends! I’m thrilled to have you here, and your interest in my story
+            truly warms my heart! Thank you for taking the time to connect with me! I’m Asmaa, a
+            wife, mom and a self-taught baker with a heart for creating. My journey began in
             Belgium, where I spent most of my life before heading to the dynamic city of Houston.
             With a master’s degree in modern languages and literatures, I’m fortunate to speak
             French, Arabic, and English fluently, along with a sprinkle of Dutch and Spanish! My
@@ -21,7 +21,7 @@
             felt like discovering my true calling! I strive to craft beautiful and tasty edible art
             that brings joy to special occasions. My goal is to turn your dream cake visions into
             edible masterpieces! I can’t wait to share my creations with you. Let’s embark on this
-            sweet journey together! ❤️
+            sweet journey together!
           </p>
         </div>
         <RouterLink to="/contact"><button class="contact-button">Contact me</button></RouterLink>
