@@ -117,7 +117,7 @@ const fillings = [
         </div>
 
         <div class="catalog-image">
-          <img src="@/assets/articles/cakemenu.jpg" alt="Cake example" />
+          <img src="@/assets/articles-optimized/cakemenu.webp" alt="Cake example" />
         </div>
       </div>
 

@@ -12,7 +12,7 @@
 <style lang="scss" scoped>
 .hero {
   min-height: 100dvh;
-  background-image: url('@/assets/cakelanding.jpeg');
+  background-image: url('@/assets/homeimg/cakelanding.jpeg');
   background-size: cover;
   background-position: center;
   display: flex;

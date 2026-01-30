@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const articles = [
-  { id: 1, image: new URL('@/assets/articles/cake0.jpg', import.meta.url).href },
-  { id: 2, image: new URL('@/assets/articles/cake1.PNG', import.meta.url).href },
-  { id: 3, image: new URL('@/assets/articles/cake2.jpeg', import.meta.url).href },
-  { id: 4, image: new URL('@/assets/articles/cake3.PNG', import.meta.url).href },
+  { id: 1, image: new URL('@/assets/articles-optimized/cake0.webp', import.meta.url).href },
+  { id: 2, image: new URL('@/assets/articles-optimized/cake1.webp', import.meta.url).href },
+  { id: 3, image: new URL('@/assets/articles-optimized/cake2.webp', import.meta.url).href },
+  { id: 4, image: new URL('@/assets/articles-optimized/cake3.webp', import.meta.url).href },
 ]
 </script>
 

@@ -4,7 +4,7 @@
   <section id="about" class="about">
     <div class="about-content">
       <div class="image-shadow">
-        <img src="@/assets/me.jpeg" alt="" />
+        <img src="@/assets/homeimg/me.jpeg" alt="" />
       </div>
       <div class="info-content">
         <div class="text-content">

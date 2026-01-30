@@ -4,10 +4,10 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 
 // --- CONFIGURATION ---
-const INPUT_DIR = './src/assets/gallery'
-const OUTPUT_DIR = './src/assets/gallery-optimized'
-const TARGET_WIDTH = 800
-const QUALITY = 80
+const INPUT_DIR = './src/assets/homeimg'
+const OUTPUT_DIR = './src/assets/homeimg-optimized'
+const TARGET_WIDTH = 1600
+const QUALITY = 100
 
 // ---------------------
 
