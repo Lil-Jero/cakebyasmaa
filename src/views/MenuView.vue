@@ -517,9 +517,11 @@ const fillings = [
     font-size: 0.9rem;
   }
 
-  .catalog-section,
-  .cakes-section {
+  .catalog-section {
     padding: 6rem 1rem 3rem 1rem;
+  }
+  .cakes-section {
+    padding: 3rem 1rem 1rem 1rem;
   }
 }
 </style>

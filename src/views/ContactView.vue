@@ -227,7 +227,7 @@ const { send } = useEmailSend(formRef)
     .contact-page__image {
       position: relative;
       width: 100%;
-      background-image: url('@/assets/cakelanding.jpeg');
+      background-image: url('@/assets/homeimg/cakelanding.jpeg');
       background-size: cover;
       background-position: center;
       padding: 2rem;
@@ -263,7 +263,7 @@ const { send } = useEmailSend(formRef)
 @media (max-width: 900px) {
   .contact-page__container {
     grid-template-columns: 1fr;
-    padding: 6rem 1.5rem 3rem 1.5rem;
+    padding: 5rem 1rem 1rem 1rem;
   }
 
   .contact-page__content {
@@ -276,6 +276,11 @@ const { send } = useEmailSend(formRef)
     .contact-page__image {
       padding: 1rem;
     }
+  }
+  .contact-form {
+    background: #fff;
+    padding: 1rem;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.08);
   }
 }
 </style>

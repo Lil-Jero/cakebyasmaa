@@ -24,7 +24,6 @@
 
 .overlay {
   font-size: clamp(3rem, 4vw, 5rem);
-  // font-size: 4rem;
   text-align: center;
   color: black;
   line-height: 1;

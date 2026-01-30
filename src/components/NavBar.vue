@@ -167,7 +167,7 @@ a {
 
 /* ===== Responsive ===== */
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .nav-center,
   .nav-right {
     display: none;
@@ -184,7 +184,7 @@ a {
 
 .mobile-menu {
   position: fixed;
-  top: 85px;
+  top: 70px;
   left: 0;
   width: 100%;
   background: rgba(255, 255, 255, 0.2);
@@ -197,6 +197,12 @@ a {
   align-items: center;
   gap: 1.5rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 900px) {
+  .nav-container {
+    min-height: 70px;
+  }
 }
 
 @media (max-height: 768px) {
