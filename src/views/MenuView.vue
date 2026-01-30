@@ -108,7 +108,7 @@ const fillings = [
 
             <div class="cakes-serving-and-pricing-notes">
               <p>Cakes quotes for more than 40 servings are available upon request.</p>
-              <p>
+              <p class="cakes-serving-and-pricing-notes-prices">
                 Prices do not include custom decorations. Fondant toppers, flowers and personalized
                 decorations are extras and will be priced upon each unique designs.
               </p>
@@ -280,9 +280,13 @@ const fillings = [
 
     .cakes-serving-and-pricing-notes {
       margin-top: 1rem;
-      font-size: 0.8rem;
-      color: #666;
+      font-size: 1rem;
       text-align: justify;
+
+      .cakes-serving-and-pricing-notes-prices {
+        color: #666;
+        font-size: 0.8rem;
+      }
 
       p {
         margin-bottom: 0.5rem;
