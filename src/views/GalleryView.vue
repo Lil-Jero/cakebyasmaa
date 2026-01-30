@@ -74,9 +74,7 @@ const images = Object.values(globImages).sort((a, b) => {
 
 @media (max-width: 480px) {
   .gallery-section {
-    padding-top: 6rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 6rem 1rem 1rem 1rem;
   }
 
   .gallery-grid {

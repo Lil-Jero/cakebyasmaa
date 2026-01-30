@@ -23,14 +23,14 @@
 }
 
 .overlay {
-  font-size: clamp(3rem, 4vw, 5rem);
+  font-size: clamp(3rem, 3vw, 5rem);
   text-align: center;
   color: black;
   line-height: 1;
 }
 
 h1 {
-  font-size: clamp(3rem, 4vw, 5rem);
+  font-size: clamp(3rem, 3vw, 5rem);
   letter-spacing: 0.3em;
 }
 
