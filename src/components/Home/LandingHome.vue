@@ -49,7 +49,7 @@ h1 {
 
 @media (max-width: 600px) {
   .hero {
-    background-image: url('@/assets/cakelanding-phone.jpeg');
+    background-image: url('@/assets/homeimg/cakelanding-phone.jpeg');
   }
 }
 </style>
