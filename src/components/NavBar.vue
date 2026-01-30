@@ -12,7 +12,16 @@ const toggleMenu = () => {
   <header class="navbar">
     <nav class="nav-container">
       <div class="nav-left">
-        <span class="language"></span>
+        <div class="nav-left">
+          <a
+            href="https://www.instagram.com/cakebyasmaa?igsh=NGR6cTZrYmlvd3Ry"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="instagram-link"
+          >
+            <img src="@/assets/instagram.png" alt="Instagram logo" />
+          </a>
+        </div>
       </div>
 
       <ul class="nav-center">
@@ -44,7 +53,7 @@ const toggleMenu = () => {
   </transition>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .navbar {
   position: fixed;
   top: 0;
@@ -53,6 +62,33 @@ const toggleMenu = () => {
   z-index: 10;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(6px);
+}
+
+/* Modifie ou ajoute ceci */
+
+.nav-left {
+  display: flex; /* Active Flexbox */
+  align-items: center; /* Centre verticalement l'enfant (le lien) */
+  height: 100%; /* S'assure qu'on utilise toute la hauteur de la barre */
+}
+
+/* On cible le lien directement pour éviter le décalage de quelques pixels sous l'image */
+.nav-left a {
+  display: flex; /* Enlève l'espace "fantôme" sous les images inline */
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.nav-left img {
+  width: 24px;
+  height: 24px;
+  display: block; /* Important : empêche l'alignement sur la ligne de texte */
+  object-fit: contain;
+}
+
+/* Petit bonus : un effet hover sympa */
+.nav-left a:hover {
+  opacity: 0.7;
 }
 
 .nav-container {

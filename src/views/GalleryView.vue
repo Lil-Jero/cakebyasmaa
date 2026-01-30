@@ -15,9 +15,7 @@ const images = Object.values(globImages).sort((a, b) => {
   <section class="gallery-section">
     <div class="gallery-grid">
       <div v-for="(image, index) in images" :key="index" class="gallery-item">
-        <a :href="image" rel="noopener">
-          <img :src="image" alt="Gallery image" loading="lazy" decoding="async" />
-        </a>
+        <img :src="image" alt="Gallery image" loading="lazy" decoding="async" />
       </div>
     </div>
   </section>
