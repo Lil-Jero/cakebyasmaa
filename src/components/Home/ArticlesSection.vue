@@ -17,7 +17,7 @@ const articles = [
     </div>
 
     <div class="see-more">
-      <RouterLink to="/gallery">
+      <RouterLink to="/menu">
         <button class="luxury-btn">
           <span>See more</span>
         </button>

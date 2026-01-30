@@ -1,25 +1,21 @@
+// emailSend.ts
 import { ref, toValue, type MaybeRefOrGetter } from 'vue'
 import emailjs from '@emailjs/browser'
 
 export function useEmailSend(formRef: MaybeRefOrGetter<HTMLFormElement | null>) {
-  console.log(formRef)
-
   const sending = ref(false)
   const success = ref(false)
   const error = ref(false)
 
-  sending.value = true
-  success.value = false
-  error.value = false
-
   async function send() {
     const form = toValue(formRef)
-    console.log(form)
+
+    sending.value = true
+    success.value = false
+    error.value = false
 
     try {
       if (form) {
-        console.log('if')
-
         await emailjs.sendForm(
           import.meta.env.VITE_EMAILJS_SERVICE_ID,
           import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
@@ -36,5 +32,6 @@ export function useEmailSend(formRef: MaybeRefOrGetter<HTMLFormElement | null>) 
       sending.value = false
     }
   }
-  return { send }
+
+  return { send, sending, success, error }
 }

@@ -3,7 +3,7 @@ import { useTemplateRef } from 'vue'
 import { useEmailSend } from './emailSend'
 
 const formRef = useTemplateRef<HTMLFormElement>('formRef')
-const { send } = useEmailSend(formRef)
+const { send, success, error, sending } = useEmailSend(formRef)
 </script>
 
 <template>
@@ -13,7 +13,16 @@ const { send } = useEmailSend(formRef)
         <div class="contact-page__image">
           <div class="contact-page__form-container">
             <h1 class="contact-page__title">Cake order form</h1>
-            <form ref="formRef" class="contact-form" @submit.prevent="send">
+            <div v-if="success" class="success-message">
+              <h3>Thank you for your order!</h3>
+              <p>We have received your request. We will contact you soon.</p>
+              <button @click="success = false" class="reset-btn">New order</button>
+            </div>
+
+            <div v-else-if="error" class="error-message">
+              <p>Oups, an error occurred. Please try again</p>
+            </div>
+            <form v-else ref="formRef" class="contact-form" @submit.prevent="send">
               <input
                 type="text"
                 name="pick_up"
@@ -46,7 +55,9 @@ const { send } = useEmailSend(formRef)
                 </p>
               </div>
 
-              <button type="submit" class="contact-form__submit">Submit</button>
+              <button type="submit" class="contact-form__submit" :disabled="sending">
+                {{ sending ? 'Sending...' : 'Submit' }}
+              </button>
             </form>
           </div>
         </div>
@@ -281,6 +292,66 @@ const { send } = useEmailSend(formRef)
     background: #fff;
     padding: 1rem;
     box-shadow: 0 40px 80px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.success-message {
+  background: #fff;
+  padding: 3rem;
+  border-radius: 1.25rem;
+  text-align: center;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.5s ease;
+
+  h3 {
+    color: #b59b73;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  p {
+    color: #666;
+    margin-bottom: 2rem;
+  }
+
+  .reset-btn {
+    background: transparent;
+    border: 1px solid #b59b73;
+    color: #b59b73;
+    padding: 0.5rem 1rem;
+    border-radius: 99px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+
+    &:hover {
+      background: #b59b73;
+      color: #fff;
+    }
+  }
+}
+
+.error-message {
+  padding: 1rem;
+  background-color: #fef2f2;
+  color: #991b1b;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  border: 1px solid #fecaca;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 </style>
