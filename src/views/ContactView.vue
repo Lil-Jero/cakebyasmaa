@@ -250,6 +250,7 @@ const { send } = useEmailSend(formRef)
     font-size: 0.75rem;
     color: #666;
     line-height: 1.4;
+    text-align: justify;
   }
 }
 

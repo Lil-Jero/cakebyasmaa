@@ -23,9 +23,9 @@ const router = createRouter({
       component: () => import('../views/ContactView.vue'),
     },
     {
-      path: '/catalog',
-      name: 'catalog',
-      component: () => import('../views/CatalogView.vue'),
+      path: '/menu',
+      name: 'menu',
+      component: () => import('../views/MenuView.vue'),
     },
   ],
   scrollBehavior(to, from, savedPosition) {

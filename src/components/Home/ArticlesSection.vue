@@ -1,14 +1,10 @@
 <script setup lang="ts">
-import router from '@/router'
-
 const articles = [
   { id: 1, image: new URL('@/assets/articles/cake0.jpg', import.meta.url).href },
   { id: 2, image: new URL('@/assets/articles/cake1.PNG', import.meta.url).href },
   { id: 3, image: new URL('@/assets/articles/cake2.jpeg', import.meta.url).href },
   { id: 4, image: new URL('@/assets/articles/cake3.PNG', import.meta.url).href },
 ]
-
-const goToArticles = () => router.push('/catalog')
 </script>
 
 <template>
@@ -21,9 +17,11 @@ const goToArticles = () => router.push('/catalog')
     </div>
 
     <div class="see-more">
-      <button class="luxury-btn" @click="goToArticles">
-        <span>See more</span>
-      </button>
+      <RouterLink to="/gallery">
+        <button class="luxury-btn">
+          <span>See more</span>
+        </button>
+      </RouterLink>
     </div>
   </section>
 </template>
@@ -45,18 +43,17 @@ const goToArticles = () => router.push('/catalog')
 
 .articles-grid {
   display: grid;
-  // Par défaut (Desktop) : 4 colonnes
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   width: 100%;
-  max-width: 1400px; // Évite que les images s'étalent trop sur des écrans géants
+  max-width: 1400px;
   margin: 0 auto;
 }
 
 .article-card {
   position: relative;
   overflow: hidden;
-  border-radius: 4px; // Un léger arrondi pour le côté premium
+  border-radius: 4px;
 
   img {
     width: 100%;
@@ -86,30 +83,25 @@ const goToArticles = () => router.push('/catalog')
 
 /* --- RESPONSIVE --- */
 
-// Tablettes et petits laptops (Sous 1024px)
 @media (max-width: 1024px) {
   .articles-grid {
     gap: 1.5rem;
   }
 }
 
-// TON PALIER : Passage en 2 colonnes à 768px
 @media (max-width: 768px) {
   .articles-grid {
-    grid-template-columns: repeat(2, 1fr); // Passage en 2x2
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     padding: 0 1rem;
   }
 }
 
-// Smartphone (Sous 480px)
 @media (max-width: 480px) {
   .articles-grid {
-    grid-template-columns: 1fr; // Une seule colonne pour une lecture claire
+    grid-template-columns: 1fr;
   }
 }
-
-// ... (ton style pour .luxury-btn reste identique)
 
 .see-more {
   display: flex;

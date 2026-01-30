@@ -38,6 +38,7 @@
   justify-content: center;
   padding: 2rem;
   overflow-x: hidden;
+  text-align: justify;
 
   .about-content {
     display: flex;
@@ -46,8 +47,10 @@
 
     // --- RESPONSIVE : TABLETTE & MOBILE ---
     @media (max-width: 900px) {
+      .title {
+        text-align: center;
+      }
       flex-direction: column;
-      text-align: center;
       gap: 30px;
     }
   }

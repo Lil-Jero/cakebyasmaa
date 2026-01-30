@@ -18,7 +18,7 @@ const toggleMenu = () => {
       <ul class="nav-center">
         <li><RouterLink to="/gallery">Gallery</RouterLink></li>
         <RouterLink to="/"><li class="brand">Cake by Asmaa</li></RouterLink>
-        <li><RouterLink to="/catalog">Menu</RouterLink></li>
+        <li><RouterLink to="/menu">Menu</RouterLink></li>
       </ul>
 
       <div class="nav-right">
@@ -38,7 +38,7 @@ const toggleMenu = () => {
     <div v-if="isOpen" class="mobile-menu">
       <RouterLink @click="toggleMenu" to="/">Home</RouterLink>
       <RouterLink @click="toggleMenu" to="/gallery">Gallery</RouterLink>
-      <RouterLink @click="toggleMenu" to="/catalog">Menu</RouterLink>
+      <RouterLink @click="toggleMenu" to="/menu">Menu</RouterLink>
       <RouterLink @click="toggleMenu" to="/contact">Place an order</RouterLink>
     </div>
   </transition>
@@ -62,7 +62,7 @@ const toggleMenu = () => {
 
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 3rem;
+  padding: 0.5rem 2rem;
 }
 
 .nav-center {
@@ -176,6 +176,10 @@ a {
   .burger {
     display: flex;
   }
+
+  .nav-container {
+    padding: 0.5rem 1.5rem;
+  }
 }
 
 .mobile-menu {
@@ -193,5 +197,26 @@ a {
   align-items: center;
   gap: 1.5rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-height: 768px) {
+  .nav-container {
+    min-height: 70px;
+  }
+}
+
+/* PROTECTION MODE PAYSAGE / FORT ZOOM VERTICAL */
+@media (max-height: 500px) {
+  .navbar {
+    /* Si l'écran est très petit en hauteur, on évite que la barre mange tout */
+    position: absolute;
+  }
+  .mobile-menu {
+    overflow-y: auto; /* Permet de scroller dans le menu s'il est trop haut */
+    max-height: 80vh;
+  }
+  .nav-container {
+    min-height: 50px;
+  }
 }
 </style>

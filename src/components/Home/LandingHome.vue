@@ -18,18 +18,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
+  padding-bottom: 56vh;
 }
 
 .overlay {
-  font-size: 4rem;
+  font-size: clamp(3rem, 4vw, 5rem);
+  // font-size: 4rem;
   text-align: center;
   color: black;
-  transform: translateY(-185%);
   line-height: 1;
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: clamp(3rem, 4vw, 5rem);
   letter-spacing: 0.3em;
 }
 
@@ -39,11 +41,11 @@ h1 {
   font-family: Sacramento;
 }
 
-@media (any-pointer: coarse) and (any-hover: none) {
-  .hero {
-    padding-top: 86px;
-  }
-}
+// @media (any-pointer: coarse) and (any-hover: none) {
+//   .hero {
+//     // padding-top: 86px;
+//   }
+// }
 
 @media (max-width: 600px) {
   .hero {

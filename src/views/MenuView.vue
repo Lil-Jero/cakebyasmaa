@@ -280,9 +280,9 @@ const fillings = [
 
     .cakes-serving-and-pricing-notes {
       margin-top: 1rem;
-      font-size: 0.85rem;
-      color: #555;
-      line-height: 1.5;
+      font-size: 0.8rem;
+      color: #666;
+      text-align: justify;
 
       p {
         margin-bottom: 0.5rem;
